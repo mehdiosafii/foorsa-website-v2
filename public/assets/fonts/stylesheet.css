@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Marcher';
+    src: url('Marcher-Bold.eot');
+    src: url('Marcher-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Marcher-Bold.woff2') format('woff2'),
+        url('Marcher-Bold.woff') format('woff'),
+        url('Marcher-Bold.ttf') format('truetype'),
+        url('Marcher-Bold.svg#Marcher-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marcher';
+    src: url('Marcher-Light.eot');
+    src: url('Marcher-Light.eot?#iefix') format('embedded-opentype'),
+        url('Marcher-Light.woff2') format('woff2'),
+        url('Marcher-Light.woff') format('woff'),
+        url('Marcher-Light.ttf') format('truetype'),
+        url('Marcher-Light.svg#Marcher-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
