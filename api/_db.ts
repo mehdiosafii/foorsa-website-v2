@@ -1,7 +1,23 @@
-import { neon } from '@neondatabase/serverless'
+import { Pool } from 'pg'
 
-const sql = neon(process.env.DATABASE_URL!)
+let pool: Pool | null = null
+
+function getPool() {
+  if (!pool) {
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false }
+    })
+  }
+  return pool
+}
 
 export async function query(text: string, params?: any[]) {
-  return sql(text, params || []).then(rows => ({ rows }))
+  const client = await getPool().connect()
+  try {
+    const result = await client.query(text, params)
+    return result
+  } finally {
+    client.release()
+  }
 }
